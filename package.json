@@ -5,10 +5,12 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open --mode=development",
+    "start:server": "webpack serve --open --mode=development",
     "build": "webpack  --mode=production",
-    "watch": "webpack --watch",
-    "server": "node server.js"
+    "start:watch": "webpack --watch",
+    "start:middleware": "node server.js",
+    "start": "npm run start:server",
+    "http:server": "http-server --ssl -c-1 -p 8080 -a 127.0.0.1"
   },
   "keywords": [
     "TTT"

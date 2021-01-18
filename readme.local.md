@@ -1,0 +1,1 @@
+link test local: https://www.facebook.com/embed/instantgames/390220418736551/player?game_url=https%3A%2F%2Flocalhost%3A8080

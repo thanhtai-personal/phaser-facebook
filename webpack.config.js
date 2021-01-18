@@ -6,11 +6,15 @@ const yaml = require('yamljs');
 const json5 = require('json5');
 
 module.exports = {
+  mode: 'development',
+  devtool: 'inline-source-map',
   entry: {
-    index: './src/index.js',
+    index: path.resolve(__dirname, 'src/index.js'),
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true, //server mode
+    port: 3000 //server mode
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
@@ -21,7 +25,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: path.resolve(__dirname, 'public'), // middleware mode
   },
   optimization: {
     runtimeChunk: 'single',
