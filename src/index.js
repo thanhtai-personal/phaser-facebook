@@ -1,10 +1,13 @@
-function component() {
-  const element = document.createElement('div');
+import Phaser from 'phaser'
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = 'Hello webpack'
+FBInstant.initializeAsync().then(function() {
 
-  return element;
-}
+  var config = {
+      type: Phaser.AUTO,
+      width: window.innerWidth,
+      height: window.innerHeight
+  };
 
-document.body.appendChild(component());
+  new Phaser.Game(config);
+
+});
