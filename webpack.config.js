@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true, //server mode
-    port: 3000 //server mode
+    port: 3056 //server mode
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
