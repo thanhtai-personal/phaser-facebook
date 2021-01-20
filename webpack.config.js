@@ -1,31 +1,38 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const toml = require('toml');
 const yaml = require('yamljs');
 const json5 = require('json5');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   devtool: 'inline-source-map',
   entry: {
-    index: path.resolve(__dirname, 'src/index.js'),
+    // shared: path.resolve(__dirname, 'src/share.js'),
+    // preloader: path.resolve(__dirname, 'src/preloader.js'),
+    // index: path.resolve(__dirname, 'src/boot.js'),
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true, //server mode
-    port: 3056 //server mode
+    contentBase: path.join(__dirname, 'dist')
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public/lib', to: 'lib' },
+        { from: 'src', to: 'src' }
+      ],
+    })
   ],
   output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: path.resolve(__dirname, 'public'), // middleware mode
+    filename: '[name].bundle.js',
+    path: path.join(__dirname, 'dist'),
+    publicPath: path.join(__dirname, 'dist'), // middleware mode
   },
   optimization: {
     runtimeChunk: 'single',

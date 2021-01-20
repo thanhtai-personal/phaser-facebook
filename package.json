@@ -9,8 +9,8 @@
     "build": "webpack  --mode=production",
     "start:watch": "webpack --watch",
     "start:middleware": "node server.js",
-    "start": "npm run start:server",
-    "http:server": "http-server --ssl -c-1 -p 8080 -a 127.0.0.1"
+    "start": "npm run start:watch",
+    "http:server": "http-server dist -b -g --ssl -c-1 -p 8080 -a 127.0.0.1"
   },
   "keywords": [
     "TTT"
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
     "csv-loader": "^3.0.3",
     "express": "^4.17.1",
