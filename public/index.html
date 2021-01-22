@@ -1,30 +1,56 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>FB Instant Phaser</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no, minimal-ui">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="full-screen" content="yes" />
-        <meta name="screen-orientation" content="portrait" />
-        <style type="text/css">
-            * {
-                padding: 0;
-                margin: 0;
-            }
-            canvas {
-                touch-action-delay: none;
-                touch-action: none;
-                -ms-touch-action: none;
-                margin: auto;
-                display: block;
-                margin-top: calc((100vh - 600px)/2);
-                
-            }
-        </style>
-        <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
-        <script src="/lib/phaser-facebook-instant-games.js"></script>
-        <script src="/src/game.js"></script>
-    </head>
-    <body>
-    </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <title>Learn Game Development at ZENVA.com</title>
+
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+      background-color: black;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    canvas {
+      touch-action-delay: none;
+      touch-action: none;
+      -ms-touch-action: none;
+      margin: auto;
+      display: block;
+      margin-top: calc((100vh - 240px)/2);
+
+    }
+  </style>
+  <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
+  <script src="/lib/phaser-facebook-instant-games.js"></script>
+</head>
+
+<body>
+
+  <script type="text/javascript" src="/lib/phaser.js"></script>
+  <script src="src/Utils.js"></script>
+
+  <script src="src/states/BootState.js"></script>
+  <script src="src/states/LoadingState.js"></script>
+  <script src="src/states/TiledState.js"></script>
+
+  <script src="src/prefabs/Prefab.js"></script>
+  <script src="src/prefabs/TextPrefab.js"></script>
+
+  <script src="src/prefabs/Player.js"></script>
+  <script src="src/prefabs/Bomb.js"></script>
+  <script src="src/prefabs/Explosion.js"></script>
+  <script src="src/prefabs/Enemy.js"></script>
+
+  <script type="text/javascript" src="src/main.js"></script>
+</body>
+
 </html>
